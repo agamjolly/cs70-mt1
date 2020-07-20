@@ -6,4 +6,4 @@ The data for this form was collected using Google Forms and assembled in an Exce
 
 ## Setup
 - Run `pip3 install numpy pandas xlrd`
-- Clone this repository, `cd` into the directory and run `python3 stats.py`. 
+- Clone this repository, `cd` into the directory and run `python3 main.py`. 
