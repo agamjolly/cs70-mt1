@@ -1,0 +1,93 @@
+
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+    CS70 Midterm I Stats
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+    <style>
+        .footer{ 
+            position:relative;
+            left:0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+        *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;font-size:16px;line-height:1.5}body{padding:1.5rem 1.5rem 3rem;margin-top:3%;font-size:1rem;color:#333;background-color:#fff}iframe{overflow:hidden;border:0}h1,h2{margin-top:0;line-height:1;text-rendering:optimizeLegibility}h1{margin-bottom:.5rem;font-size:3rem}h2{margin-top:2rem;margin-bottom:1rem}h3{margin-top:2rem;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}h1+p{font-size:1.25rem;color:#555}a{color:#0366d6;text-decoration:none}a:hover{text-decoration:underline}table{width:100%;border-collapse:collapse}th,td{padding:.5rem;font-size:90%;vertical-align:top;border:1px solid #eee}th{background-color:#f5f5f5}.deprecated{display:inline-block;padding:.25rem .5rem;font-size:75%;font-weight:700;line-height:1.6;color:#fff;background-color:#e5271c;border-radius:.2rem}code,pre{font-family:Menlo, "Courier New", monospace;font-size:95%}code{padding:2px 4px;font-size:85%;color:#d53049;background-color:#f7f7f9;border-radius:.2rem}pre{display:block;margin:0 0 1rem;line-height:1.4;white-space:pre;white-space:pre-wrap}pre code{padding:0;color:inherit;background-color:transparent;border:0}.highlight{padding:1rem;margin:0 0 1rem;background-color:#f7f7f9}.highlight pre{margin-bottom:0;word-wrap:break-word}.highlight+.highlight{margin-top:1rem}.btn{display:inline-block;padding:.5rem 1.25rem;font-weight:700;color:#fff;text-decoration:none;background-color:#0366d6;border:1px solid #0366d6;border-radius:6px}.btn:hover{text-decoration:none;background-color:#005cc5}.btn:active{border-color:#005cc5;box-shadow:inset 0 5px 10px rgba(0,0,0,0.2)}.tweet-button{height:30px;overflow:hidden}.tweet-button+p{margin-top:1rem;color:#767676}.container{max-width:50rem;margin-right:auto;margin-left:auto}hr{display:block;width:7rem;height:1px;margin:2.5rem 0;background-color:#eee;border:0}.example{margin-bottom:1rem;overflow:auto}.example iframe{display:block}.example iframe+iframe{margin-top:1rem}@media (min-width: 34em){.example{display:inline-block;line-height:30px}.example iframe{float:left}.example iframe+iframe{margin-top:5px;margin-left:1rem}}#markdown-toc li{margin-bottom:.25rem}.hll{background-color:#ffc}.c{color:#727272}.k{color:#069}.o{color:#555}.cm{color:#727272}.cp{color:#008085}.c1{color:#727272}.cs{color:#727272}.gd{background-color:#fcc;border:1px solid #c00}.ge{font-style:italic}.gr{color:#f00}.gh{color:#030}.gi{background-color:#cfc;border:1px solid #0c0}.go{color:#aaa}.gp{color:#009}.gu{color:#030}.gt{color:#9c6}.kc{color:#069}.kd{color:#069}.kn{color:#069}.kp{color:#069}.kr{color:#069}.kt{color:#078}.m{color:#bc511f}.s{color:#d82d36}.na{color:#006ee0}.nb{color:#366}.nc{color:#168174}.no{color:#360}.nd{color:#685fe3}.ni{color:#727272}.ne{color:#c00}.nf{color:#b715f4}.nl{color:#685fe3}.nn{color:#007ca5}.nt{color:#2f6f9f}.nv{color:#033}.ow{color:#000}.w{color:#bbb}.mf{color:#bc511f}.mh{color:#bc511f}.mi{color:#bc511f}.mo{color:#bc511f}.sb{color:#c30}.sc{color:#c30}.sd{font-style:italic;color:#c30}.s2{color:#c30}.se{color:#c30}.sh{color:#c30}.si{color:#a00}.sx{color:#c30}.sr{color:#337e7e}.s1{color:#c30}.ss{color:#fc3}.bp{color:#366}.vc{color:#033}.vg{color:#033}.vi{color:#033}.il{color:#bc511f}
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 6% 6% 6% 6%;
+        }
+
+        .light { 
+            font-weight: lighter;
+        }
+        
+
+    </style>
+    <body>
+    <div class="container">
+        <h1>CS70 Midterm 1</h1>Last modified: {{ last }} IST<br>Total entries: {{ total }}
+        <hr>
+        <h2>Statistics</h2>
+        
+        <h4>Mean: <span class="light">{{ mean }}</span></h4>
+        <h4>Median: <span class="light">{{ median }}</span></h4>
+        <h4>Standard Deviation: <span class="light">{{ std }}</h4></span>
+        <h4>Highest Score: <span class="light">{{ hi }}</span> </h4>
+        <h4>Lowest Score: <span class="light">{{ lo }}</span> </h4>
+
+        <h2>Standard Deviation Scores</h2>
+        {% for j in std_minus %}
+                <h4>{{ j }} <span class="light">{{ std_minus[j] }}</span></h4>
+        {% endfor %}
+
+      {% for i in std_plus %}
+                <h4>{{ i }} <span class="light">{{ std_plus[i] }}</span></h4>
+        {% endfor %}<br>
+        <canvas id="myChart"></canvas>
+    
+    </div>
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+        labels: ["10-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"],
+        datasets: [{
+            label: 'Score-wise range based on received data',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: {{ numbers }}
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+    </script>
+    </div>
+    <br>
+    <footer class="footer">
+        <hr class="footer">
+        <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/agamjolly/cs70-mt1" data-icon="octicon-star" aria-label="Star agamjolly/cs70-mt1 on GitHub">Star</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/agamjolly" aria-label="Follow @agamjolly on GitHub">Follow @agamjolly</a>
+ <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/agamjolly/cs70-mt1/subscription" data-icon="octicon-eye" aria-label="Watch agamjolly/cs70-mt1 on GitHub">Watch</a>
+<br>Find the source <a href="">here</a>.     
+</footer>
+    </body>
+    </html>
