@@ -77,7 +77,8 @@ def index():
 
 # Driver code
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=8000, debug=True)
+    app.run(host='0.0.0.0', port=80)
+    """
     print("------------------------------"+ "\nCS70 Midterm 1 Stats")
     print("Last modified: " + str(last_time))
     print("------------------------------")
@@ -94,3 +95,4 @@ if __name__ == "__main__":
     for i in np.arange(0.5, 2.0, 0.5):
         print("+" + str(i) + " STD: " + str(round((median()+i*standard_deviation()),2)))
     print()
+    """
