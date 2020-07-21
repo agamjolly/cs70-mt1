@@ -13,7 +13,7 @@ df = pd.read_excel('data.xlsx')
 a = df['marks'].tolist()
 com = df['comments'].tolist()
 app = Flask(__name__)
-path = os.path.getmtime('Book1.xlsx')
+path = os.path.getmtime('data.xlsx')
 last_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(path))
 
 com = [i for i in com if len(str(i))>3]
