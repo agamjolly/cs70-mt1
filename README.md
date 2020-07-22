@@ -2,7 +2,7 @@
 Unofficial crowdsourced statistics for CS70 Summer 2020 Midterm 1.
 
 ## Data
-The data for this form was collected using Google Forms and assembled in an Excel file. This file was then imported into Python and cleaned using Pandas. 
+The data for this form was collected using Google Forms and assembled in an Excel file. This file was then imported into Python and cleaned using Pandas and Numpy. Huge shoutout to everyone who filled out the form and contributed scores to help us get a better understanding of the midterm. 
 
 ## Installing Dependencies
 All dependencies for the app can be installed using the `requirements.txt` file located in the root of the directory.
